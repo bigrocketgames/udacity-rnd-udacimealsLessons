@@ -7,6 +7,7 @@ import UdaciSteppers from './UdaciSteppers'
 import DateHeader from './DateHeader'
 import { getMetricMetaInfo, timeToString } from '../utils/helpers'
 import TextButton from './TextButton'
+import { submitEntry, removeEntry } from '../utils/api'
 
 const SubmitBtn = ({ onPress }) => {
   return (
@@ -74,6 +75,7 @@ class AddEntry extends Component {
     // Navigate to home
 
     // Save to 'DB'
+    submitEntry({key, entry})
 
     // Clear local notification
   }
@@ -85,7 +87,8 @@ class AddEntry extends Component {
 
     // Route to home
 
-    // Update 'db'
+    // Update 'DB'
+    removeEntry(key)
   }
 
   render() {
