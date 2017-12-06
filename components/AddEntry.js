@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, Platform, StyleSheet } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { connect } from 'react-redux'
+import { NavigationActions } from 'react-navigation'
 
 
 import UdaciSlider from './UdaciSlider'
@@ -81,6 +82,7 @@ class AddEntry extends Component {
     }))
 
     // Navigate to home
+    this.toHome()
 
     // Save to 'DB'
     submitEntry({key, entry})
@@ -97,9 +99,16 @@ class AddEntry extends Component {
     }))
 
     // Route to home
+    this.toHome()
 
     // Update 'DB'
     removeEntry(key)
+  }
+
+  toHome = () => {
+    this.props.navigation.dispatch(NavigationActions.back({
+      key: 'AddEntry'
+    }))
   }
 
   render() {
