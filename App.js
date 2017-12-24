@@ -16,7 +16,7 @@ import { purple, white } from './utils/colors'
 function UdaciStatusBar ({backgroundColor, ...props}) {
   return (
     <View style={{backgroundColor, height: Constants.statusBarHeight}}>
-      <StatusBar tanslucent backgroundColor={backgroundColor} {...props} />
+      <StatusBar translucent backgroundColor={backgroundColor} {...props} />
     </View>
   )
 }

@@ -38,7 +38,7 @@ class EntryDetail extends Component {
     const { entryId, metrics } = this.props
 
     return (
-      <View style={StyleSheet.container}>
+      <View style={styles.container}>
         <MetricCard metrics={metrics} />
         <TextButton onPress={this.reset} style={{margin: 20}}>
           Reset
